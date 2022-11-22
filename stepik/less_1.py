@@ -458,7 +458,9 @@ print('ಠ_ಠ')
 
 
 n = int(input())
-for i in range(n+1):
-    if 5<=i<=9:
-        continue
-
+product = 1
+while n > 9:
+    digit = n % 10
+    product = product * digit
+    n //= 10
+print(product)
