@@ -456,11 +456,21 @@ print('ಠ_ಠ')
 #
 # print(next((lambda x: (i for i in range(2, x + 1) if not x % i))(int(input()))))
 
+# Дано натуральное число n \, (n \le 9)n (n≤ 9). Напишите программу, которая печатает таблицу сложения для всех чисел от 11 до nn в соответствии с примером
+# n = int(input())
+# for i in range(1, n+1):
+#     for j in range(1, 10):
+#         print(f'{i} + {j} = {i + j}')
+#     print()
+#
+# (lambda x: [[print(f'{j} + {i} = {j + i}') for i in range(1, 10)] and print() for j in range(1, x + 1)])(int(input()))
+#
+# [[print(f'{j} + {i} = {j+i}') for i in range(1,10)]and print() for j in range(1,a+1)]
 
 n = int(input())
-product = 1
-while n > 9:
-    digit = n % 10
-    product = product * digit
-    n //= 10
-print(product)
+
+for j in range(n-1):
+    print('*'*j)
+print('--')
+for i in range( n-3,0, -1):
+    print('*'*i)
