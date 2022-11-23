@@ -468,7 +468,6 @@ print('ಠ_ಠ')
 # [[print(f'{j} + {i} = {j+i}') for i in range(1,10)]and print() for j in range(1,a+1)]
 
 n = int(input())
-
 for j in range(n-1):
     print('*'*j)
 print('--')
