@@ -467,9 +467,86 @@ print('ಠ_ಠ')
 #
 # [[print(f'{j} + {i} = {j+i}') for i in range(1,10)]and print() for j in range(1,a+1)]
 
+
+# Найдите все пары натуральных чисел (и их количество) являющихся решением уравнения x^2+y^2+z^2 = 2020
+# total = 0
+# for x in range(1, 45):
+#     for y in range(1, 45):
+#         for z in range(1, 45):
+#             if x ** 2 + y ** 2 + z ** 2 == 2020:
+#                 total += 1
+#                 print('x =', x, 'y =', y, 'z =', z)
+# print('Общее количество натуральных решений =', total)
+
+
+# total = 0
+# for i in range(1, 100//10):
+#     for j in range(1, 100//5):
+#         for k in range(1, int(100//0.5)):
+#             if 10*i + 5*j + 0.5*k == 100 and i+j+k == 100:
+#                 total+=1
+#                 print('n =', i, 'k =', j, 'm =', k)
+# print('Общее количество натуральных решений =', total)
+
+# Теорема Ферма
+# for a in range(1, 151):
+#     for b in range(a, 151):
+#         for c in range(b, 151):
+#             for d in range(c, 151):
+#                 for e in range(d, 151):
+#                     if a ** 5 + b ** 5 + c ** 5 + d ** 5 == e ** 5:
+#                         print(a, b, c, d, e)
+#                         print(a + b + c + d + e)
+#                         break
+
+# from datetime import datetime
+# start_time = datetime.now()
+# for a in range(1, 151):
+#     for b in range(a, 151):
+#         for c in range(b, 151):
+#             for d in range(c, 151):
+#                 sum = a ** 5 + b ** 5 + c ** 5 + d ** 5
+#                 e = int(sum ** (1/5))
+#                 if sum == e ** 5:
+#                     print(a, b, c, d, e)
+#                     print(a + b + c + d + e)
+#                     break
+# end_time = datetime.now()
+# print(f'Duration = {end_time-start_time}')
+
+
+# from datetime import datetime
+# start_time = datetime.now()
+#
+# arr5 = [i ** 5 for i in range(2, 150)]                           # массив пятых степеней
+# abc = set(a + b + c for a in arr5 for b in arr5 for c in arr5 if a<b<c)   # варианты сумм а^5+b^5+ c^5
+# de =  set(e - d  for e in arr5 for d in arr5 if e - d > 0)       # варианты разности е^5 - d^5
+# res = abc & de                                                   # пересечение вариантов
+#
+# # находим a b c для верных ответов
+# abc_res = [[a + b + c, a, b, c] for a in arr5 for b in arr5 for c in arr5 if a + b + c in res]
+#
+# # находим d e для верных ответов
+# de_res = [[e - d, e , d]  for e in arr5 for d in arr5 if (e - d in res) ]
+#
+# elist = []
+# for i_res in res:            #  исключаем повторения
+#     for i_abc in abc_res:
+#         if i_res == i_abc[0]:
+#             aa, bb, cc = i_abc[1:]
+#     for i_de in de_res:
+#         if i_res == i_de[0]:
+#             ee, dd = i_de[1:]
+#     if ee not in elist:
+#         elist.append(ee)
+#         aa, bb, cc, dd, ee = sorted([round(aa**0.2), round(bb**0.2), round(cc**0.2), round(dd**0.2), round(ee**0.2)])
+#         print(aa, bb, cc, dd, ee,'a+b+c+d+e=',aa + bb + cc + dd + ee)
+#
+# end_time = datetime.now()
+# print('Duration: {}'.format(end_time - start_time))
+
 n = int(input())
-for j in range(n-1):
-    print('*'*j)
-print('--')
-for i in range( n-3,0, -1):
-    print('*'*i)
+for i in range(1, n+1):
+    for j in range(i):
+        print(i)
+    print()
