@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 import pandas as pd
-# pip install pandas openpyxl selenium
+# pip install pandas openpyxl selenium xlwt
 
 ser = Service(r"C:\chromedriver.exe")
 op = webdriver.ChromeOptions()
@@ -23,7 +23,7 @@ for post in posts:
     )
 headers = ['Title', 'Price', 'Add. info']
 data_frame = pd.DataFrame(posts_data, columns=headers)
-with pd.ExcelWriter('mashina_kg.xlsx') as writer:
+with pd.ExcelWriter('mashina_kg_2.xls') as writer:
     data_frame.to_excel(writer)
 
 
